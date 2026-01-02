@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack-Based Web Browser Navigation - DSA Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🌐 Stack Browser Navigation</h1>
+                <p>Data Structure & Algorithm - Stack Implementation</p>
+            </div>
+        </header>
+
+        <!-- Browser Address Bar -->
+        <div class="browser-address-bar">
+            <div class="nav-buttons">
+                <button id="backBtn" class="nav-btn" title="Go Back">◀ Back</button>
+                <button id="forwardBtn" class="nav-btn" title="Go Forward">Forward ▶</button>
+                <button id="refreshBtn" class="nav-btn" title="Refresh">🔄 Refresh</button>
+                <button id="resetBtn" class="nav-btn reset-btn" title="Reset Browser">🔄 Reset</button>
+            </div>
+            <div class="url-input-group">
+                <input type="text" id="urlInput" class="url-input" placeholder="Enter URL..." value="https://www.google.com">
+                <button id="navigateBtn" class="navigate-btn">Navigate</button>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <div class="links-grid">
+                <button class="quick-link-btn" onclick="navigateTo('https://www.google.com', 'Google')">Google</button>
+                <button class="quick-link-btn" onclick="navigateTo('https://www.github.com', 'GitHub')">GitHub</button>
+                <button class="quick-link-btn" onclick="navigateTo('https://www.stackoverflow.com', 'Stack Overflow')">Stack Overflow</button>
+                <button class="quick-link-btn" onclick="navigateTo('https://www.wikipedia.org', 'Wikipedia')">Wikipedia</button>
+                <button class="quick-link-btn" onclick="navigateTo('https://www.youtube.com', 'YouTube')">YouTube</button>
+                <button class="quick-link-btn" onclick="navigateTo('https://www.linkedin.com', 'LinkedIn')">LinkedIn</button>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Current Page Display -->
+            <div class="current-page-section">
+                <div class="current-page-card">
+                    <h2>Current Page</h2>
+                    <div class="page-info">
+                        <div class="page-icon">📄</div>
+                        <div class="page-details">
+                            <h3 id="currentTitle">New Tab</h3>
+                            <p id="currentURL">about:blank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stacks Visualization -->
+            <div class="stacks-container">
+                <!-- Back Stack -->
+                <div class="stack-section back-stack-section">
+                    <div class="stack-header">
+                        <h2>⬅️ Back Stack</h2>
+                        <span class="stack-count" id="backCount">0</span>
+                    </div>
+                    <div class="stack-visualization">
+                        <div class="stack-items" id="backStack">
+                            <!-- Stack items will be added here -->
+                        </div>
+                        <div class="stack-empty" id="backEmpty">
+                            <p>No history</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forward Stack -->
+                <div class="stack-section forward-stack-section">
+                    <div class="stack-header">
+                        <h2>➡️ Forward Stack</h2>
+                        <span class="stack-count" id="forwardCount">0</span>
+                    </div>
+                    <div class="stack-visualization">
+                        <div class="stack-items" id="forwardStack">
+                            <!-- Stack items will be added here -->
+                        </div>
+                        <div class="stack-empty" id="forwardEmpty">
+                            <p>No future pages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Browser Status -->
+            <div class="browser-status">
+                <div class="status-card">
+                    <h3>📊 Browser Status</h3>
+                    <div class="status-grid">
+                        <div class="status-item">
+                            <span class="label">Back History:</span>
+                            <span class="value" id="statusBack">0 pages</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">Forward History:</span>
+                            <span class="value" id="statusForward">0 pages</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">Total Pages Visited:</span>
+                            <span class="value" id="statusTotal">0 pages</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="status-card">
+                    <h3>💡 How It Works</h3>
+                    <ul class="info-list">
+                        <li>Navigate to websites using the address bar</li>
+                        <li>Pages are pushed to the Back Stack</li>
+                        <li>Use Back button to pop from Back Stack → push to Forward Stack</li>
+                        <li>Use Forward button to pop from Forward Stack → push to Back Stack</li>
+                        <li>Stack operations follow LIFO (Last In First Out) principle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation History Log -->
+        <div class="history-log">
+            <h3>📋 Navigation History Log</h3>
+            <div class="log-content" id="historyLog">
+                <p class="log-entry">Application started...</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Stack-Based Browser Navigation | DSA Project | Data Structures & Algorithms</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
