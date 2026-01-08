@@ -312,9 +312,7 @@ Sends back current browser state:
 - Updates UI with server responses
 - Handles all user interactions
 - Shows real-time stack changes
-
-**Key Point:** JavaScript does NOT implement stacks - it only visualizes them. All stack operations happen in C!
-
+- 
 ---
 
 ## 6. How It Works - Complete Flow
@@ -543,73 +541,6 @@ http://127.0.0.1:8000
 | Functions | 20+ |
 | Time Complexity | O(1) per operation |
 
----
-
-## 13. How to Present This Project
-
-### To Lecturer:
-1. Show working application (live demo)
-2. Explain stack operations (back/forward/reset)
-3. Highlight real-world application
-4. Show source code structure
-5. Demonstrate compilation and execution
-
-### Key Points to Emphasize:
-- "Stack is used in actual browsers for history management"
-- "LIFO principle - Last In First Out - demonstrated clearly"
-- "All operations are O(1) time complexity"
-- "Complete integration from C backend to web frontend"
-- "Memory-safe implementation with boundary checking"
-
-### Timeline:
-- 2 min: Run the application live
-- 3 min: Explain stack concept
-- 3 min: Show code walkthrough
-- 2 min: Demonstrate back/forward/reset operations
-
----
-
-## 14. Files to Attach to Report
-
-**Essential Code Files:**
-1. `stack.c` - Core data structure
-2. `stack.h` - Stack declarations
-3. `navigation.c` - Application logic
-4. `navigation.h` - Navigation structures
-5. `server.c` - HTTP server
-6. `Main.c` - CLI program
-
-**Frontend Files:**
-7. `index.html` - Web interface
-8. `script.js` - API client
-
-**Compilation Command:**
-```
-gcc -o server.exe Main.c server.c navigation.c stack.c -lws2_32
-```
-
----
-
-## 15. Conclusion
-
-This project successfully demonstrates:
-- ✓ Complete understanding of stack data structure
-- ✓ Practical application in real-world scenario
-- ✓ Integration of multiple technologies (C, HTTP, Web)
-- ✓ Professional code organization
-- ✓ Problem-solving approach
-
-The Stack-Based Browser Navigation System serves as a comprehensive portfolio project showcasing both theoretical DSA knowledge and practical implementation skills.
-
----
-
-## 16. References
-
-- **Stack Data Structure:** LIFO principle, push/pop operations
-- **Real-World Application:** Browser navigation history
-- **HTTP Protocol:** Client-server communication
-- **C Programming:** Winsock2 networking, file I/O
-- **Web Technologies:** HTML, CSS, JavaScript, JSON
 
 ---
 
